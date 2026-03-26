@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katbghini 💕</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #d94b7a;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #ff5c8a;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #c13b66;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+#yes {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- بدل هاد الصورة بالرابط ديال الصورة ديالك -->
+  <img src="" alt="">
+
+  <h2 id="text">Katbghini? 🥺</h2>
+
+  <div class="buttons">
+    <button id="yes">AH</button>
+    <button id="no">LA</button>
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const text = document.getElementById("text");
+
+const words = [
+  "wach mt2kda? ",
+"fakri mzian ",
+"choufi wkan ",
+"7awli mara akhra ",
+"wa zidi fakri ",
+"goli ah 3afak ",
+"goli Ah ",
+"sf makhasnich ",
+"ghir knkdb goli ah !! ",
+"3la chwiya 💗",
+"ana baghi nsm3 Ah ",
+"mt2kda??? "
+];
+
+let i = 0;
+
+noBtn.addEventListener("click", () => {
+  text.innerHTML = words[i % words.length];
+  i++;
+
+  // تكبير زر AH
+  let size = parseInt(window.getComputedStyle(yesBtn).fontSize);
+  yesBtn.style.fontSize = (size + 5) + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+  text.innerHTML = "ta ana kanbghik 😍💕";
+});
+</script>
+
+</body>
+</html>
