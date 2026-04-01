@@ -57,9 +57,70 @@ button:active {
   font-weight: bold;
 }
 </style>
-</head>
+</head><style>
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #ffdde1 0%, #f9c9d4 40%, #ffb7c5 100%);
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
 
-<body>
+/* القلوب */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    background: linear-gradient(135deg, #ff9aae, #ff6f91);
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    animation: floatHeart 8s linear infinite;
+    opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -9px;
+    left: 0;
+}
+
+.heart::after {
+    left: -9px;
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) rotate(45deg); opacity: 0.5; }
+    100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+}
+</style>
+
+<body> <div class="hearts-container">
+    <div class="heart" style="left:10%; animation-duration: 8s;"></div>
+    <div class="heart" style="left:30%; animation-duration: 10s;"></div>
+    <div class="heart" style="left:50%; animation-duration: 7s;"></div>
+    <div class="heart" style="left:70%; animation-duration: 9s;"></div>
+    <div class="heart" style="left:90%; animation-duration: 11s;"></div>
+</div>
 
 <div class="container">
 <img src="https://static.vecteezy.com/system/resources/previews/043/557/157/non_2x/teddy-bear-holding-heart-on-isolated-transparent-background-png.png" class="teddy">
